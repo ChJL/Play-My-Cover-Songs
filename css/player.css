@@ -1,0 +1,54 @@
+#audio-player {
+    position: fixed;
+    top: inherit;
+    padding-top: 1em;
+    left: 1;
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  #button-container {
+    width: 200px; /* Width of the container */
+    height: 300px; /* Height of the container */
+    overflow: auto; /* Allows for scrolling */
+  }
+  
+  /* Style for the buttons and the list, as previously described */
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  
+  li {
+    margin: 10px;
+  }
+  
+  button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41; /* Darker green */
+  }
+  
+  button:active {
+    background-color: #3e8e41; /* Darker green */
+    transform: translateY(2px);
+  }
+  
+  #song-info {
+    text-align: left;
+    padding-left: 1em;
+  } 
