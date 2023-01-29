@@ -8,8 +8,8 @@
   }
   
   #button-container {
-    width: 200px; /* Width of the container */
-    height: 300px; /* Height of the container */
+    width: 30%; /* Width of the container */
+    height: 20em; /* Height of the container */
     overflow: auto; /* Allows for scrolling */
   }
   
@@ -23,6 +23,10 @@
   
   li {
     margin: 10px;
+  }
+
+  #audio {
+    width: 25%;
   }
   
   button {
