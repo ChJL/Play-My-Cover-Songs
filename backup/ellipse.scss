@@ -1,0 +1,44 @@
+// 设置大小
+$ellipse:180px;
+
+$circle:$ellipse/10;
+@mixin style($mod) {
+    width: $mod * 2;
+    height: $mod * 2;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.ellipse {
+    @include style($ellipse);
+    border: 1px #555 solid;
+    transform-style: preserve-3d;
+    .circle {
+        @include style($circle);
+        background: deepskyblue;
+        animation: move linear infinite;
+    }
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            top: $i * 30px;
+            transform: rotateZ(90deg) rotateY(70deg);
+            .circle {
+                animation-duration: 5s;
+            }
+        }
+    }
+}
+
+@keyframes move {
+    from {
+        transform: rotateZ(0) translateX($ellipse) rotateZ(0) rotateY(70deg);
+    }
+    to {
+        transform: rotateZ(360deg) translateX($ellipse) rotateZ(-360deg) rotateY(70deg);
+    }
+}

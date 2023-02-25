@@ -1,0 +1,109 @@
+@use 'sass:math';
+@mixin style($mod) {
+    width: $mod * 2;
+    height: $mod * 2;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+  }
+  
+  .ellipse {
+    border: 0px #555 solid;
+    transform-style: preserve-3d;
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        $size: 20 + $i*30px;
+        @include style($size);
+        .circle {
+          @include style($size /10);
+          background:deepskyblue;
+          animation: move linear infinite;
+        //   animation-delay: (($i + 1) / 10)* 2s;
+          animation-duration: 12s;
+        }
+        top:120px;
+        bottom: $i*$i*$i*0.5px;
+        transform: rotateZ(90deg) rotateY(70deg);
+      }
+    }
+
+    @for $i from 10 through 20 {
+        &:nth-child(#{$i}) {
+          $size: 320 - (($i) - 9) * 30px;
+          @include style($size);
+          .circle {
+            @include style($size /10);
+            background: deepskyblue;
+            animation: move linear infinite;
+            // animation-delay: (($i + 1) / 10)* 2s;
+            animation-duration: 12s;
+          }
+          top:120px;
+          bottom:9*9*9*0.5 + 9*9*9*0.5 -  (19-$i)*(19-$i)*(19-$i)*0.5px;
+          transform: rotateZ(90deg) rotateY(70deg);
+        }
+      }
+  }
+  
+.ellipse .circle:nth-child(1) {
+// styles for the first .circle element
+animation-duration: 12s;
+animation-delay: 0s;
+transform: translateX(50px);
+}
+
+.ellipse .circle:nth-child(2) {
+// styles for the second .circle element
+animation-duration: 12s;
+animation-delay: 2s;
+transform: translateX(100px);
+}
+
+.ellipse .circle:nth-child(3) {
+// styles for the third .circle element
+animation-duration: 12s;
+animation-delay: 4s;
+transform: translateX(150px);
+}
+.ellipse .circle:nth-child(4) {
+// styles for the third .circle element
+animation-duration: 12s;
+animation-delay: 6s;
+transform: translateX(150px);
+}
+.ellipse .circle:nth-child(5) {
+// styles for the third .circle element
+animation-duration: 12s;
+animation-delay: 8s;
+transform: translateX(150px);
+}
+.ellipse .circle:nth-child(6) {
+// styles for the third .circle element
+animation-duration: 12s;
+animation-delay: 10s;
+// transform: translateX(150px);
+}
+
+
+  @keyframes move {
+    from {
+      transform: rotateZ(0) translateX(500%) rotateZ(0) rotateY(70deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(500%) rotateZ(-360deg) rotateY(70deg);
+    }
+  }
+
+  @keyframes move-1 {
+    from {
+      transform: rotateZ(0) translateX(500%) rotateZ(180deg) rotateY(70deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(500%) rotateZ(-180deg) rotateY(70deg);
+    }
+  }
+  

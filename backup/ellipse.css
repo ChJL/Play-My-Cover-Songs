@@ -1,0 +1,70 @@
+.ellipse {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  border: 1px #555 solid;
+  transform-style: preserve-3d;
+}
+.ellipse .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  background: deepskyblue;
+  animation: move linear infinite;
+}
+.ellipse:nth-child(1) {
+  top: 30px;
+  transform: rotateZ(90deg) rotateY(70deg);
+}
+.ellipse:nth-child(1) .circle {
+  animation-duration: 5s;
+}
+.ellipse:nth-child(2) {
+  top: 60px;
+  transform: rotateZ(90deg) rotateY(70deg);
+}
+.ellipse:nth-child(2) .circle {
+  animation-duration: 5s;
+}
+.ellipse:nth-child(3) {
+  top: 90px;
+  transform: rotateZ(90deg) rotateY(70deg);
+}
+.ellipse:nth-child(3) .circle {
+  animation-duration: 5s;
+}
+.ellipse:nth-child(4) {
+  top: 120px;
+  transform: rotateZ(90deg) rotateY(70deg);
+}
+.ellipse:nth-child(4) .circle {
+  animation-duration: 5s;
+}
+.ellipse:nth-child(5) {
+  top: 150px;
+  transform: rotateZ(90deg) rotateY(70deg);
+}
+.ellipse:nth-child(5) .circle {
+  animation-duration: 5s;
+}
+
+@keyframes move {
+  from {
+    transform: rotateZ(0) translateX(180px) rotateZ(0) rotateY(70deg);
+  }
+  to {
+    transform: rotateZ(360deg) translateX(180px) rotateZ(-360deg) rotateY(70deg);
+  }
+}/*# sourceMappingURL=ellipse.css.map */
