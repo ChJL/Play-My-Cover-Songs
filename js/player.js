@@ -12,13 +12,16 @@ const audio = document.getElementById("audio");
 const songTitle = document.getElementById("song-title");
 const songArtist = document.getElementById("song-artist");
 
+window.addEventListener("unhandledrejection", (event) => {
+  console.log(event.reason);
+});
 // if (song1Button){
 song1Button.addEventListener("click", function() {
   audio.src = "https://drive.google.com/uc?export=download&id=14dJ7HD-8Q80FU62wCwjohxCrRCiRZJIC";
 //   songTitle.textContent = "Song 1";
 //   songArtist.textContent = "Artist 1";
   audioPlayer.style.display = "block";
-  audio.play();
+  // audio.play();
 });
 
 song2Button.addEventListener("click", function() {
@@ -55,7 +58,7 @@ song5Button.addEventListener("click", function() {
 });
 
 song6Button.addEventListener("click", function() {
-  audio.src = "https://drive.google.com/uc?export=download&id=1NxYngo4T6er4wKVABPIqj0ifBoyqYx";
+  audio.src = "https://drive.google.com/uc?export=download&id=1NxYngo4T6er4wKVABPIqj0ifBoyqYx-v";
 //   songTitle.textContent = "Song 3";
 //   songArtist.textContent = "Artist 3";
   audioPlayer.style.display = "block";
